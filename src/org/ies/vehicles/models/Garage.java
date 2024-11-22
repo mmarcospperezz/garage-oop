@@ -5,12 +5,12 @@ import java.util.Objects;
 public class Garage {
     private String name;
     private String direction;
-    private String[] vehicule;
+    private Vehicule[] vehicules;
 
-    public Garage(String name, String direction, String[] vehicule) {
+    public Garage(String name, String direction, Vehicule[] vehicules) {
         this.name = name;
         this.direction = direction;
-        this.vehicule = vehicule;
+        this.vehicules = vehicules;
     }
 
     public String getName() {
@@ -29,12 +29,12 @@ public class Garage {
         this.direction = direction;
     }
 
-    public String[] getVehicule() {
-        return vehicule;
+    public Vehicule[] getVehicules() {
+        return vehicules;
     }
 
-    public void setVehicule(String[] vehicule) {
-        this.vehicule = vehicule;
+    public void setVehicules(Vehicule[] vehicules) {
+        this.vehicules = vehicules;
     }
 
     @Override
@@ -42,11 +42,20 @@ public class Garage {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Garage garage = (Garage) o;
-        return Objects.equals(name, garage.name) && Objects.equals(direction, garage.direction) && Objects.deepEquals(vehicule, garage.vehicule);
+        return Objects.equals(name, garage.name) && Objects.equals(direction, garage.direction) && Objects.deepEquals(vehicules, garage.vehicules);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, direction, Arrays.hashCode(vehicule));
+        return Objects.hash(name, direction, Arrays.hashCode(vehicules));
+    }
+
+    @Override
+    public String toString() {
+        return "Garage{" +
+                "name='" + name + '\'' +
+                ", direction='" + direction + '\'' +
+                ", vehicules=" + Arrays.toString(vehicules) +
+                '}';
     }
 }

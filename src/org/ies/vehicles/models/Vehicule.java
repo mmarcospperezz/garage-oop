@@ -8,6 +8,13 @@ public class Vehicule {
     private String color;
     private String plate;
 
+    public Vehicule(VehiculeType vehiculeType, int maxSpeed, String color, String plate) {
+        this.vehiculeType = vehiculeType;
+        this.maxSpeed = maxSpeed;
+        this.color = color;
+        this.plate = plate;
+    }
+
     public VehiculeType getVehiculeType() {
         return vehiculeType;
     }
@@ -22,13 +29,6 @@ public class Vehicule {
 
     public String getPlate() {
         return plate;
-    }
-
-    public Vehicule(VehiculeType vehiculeType, int maxSpeed, String color, String plate) {
-        this.vehiculeType = vehiculeType;
-        this.maxSpeed = maxSpeed;
-        this.color = color;
-        this.plate = plate;
     }
 
     public void setVehiculeType(VehiculeType vehiculeType) {
@@ -58,5 +58,15 @@ public class Vehicule {
     @Override
     public int hashCode() {
         return Objects.hash(vehiculeType, maxSpeed, color, plate);
+    }
+
+    @Override
+    public String toString() {
+        return "Vehicule{" +
+                "vehiculeType=" + vehiculeType +
+                ", maxSpeed=" + maxSpeed +
+                ", color='" + color + '\'' +
+                ", plate='" + plate + '\'' +
+                '}';
     }
 }
