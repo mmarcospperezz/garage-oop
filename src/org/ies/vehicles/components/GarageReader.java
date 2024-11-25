@@ -26,14 +26,14 @@ public class GarageReader {
         scanner.nextLine();
 
         Vehicule[] vehicules = new Vehicule[size];
-        for (int  i = 0; i < vehicules.length; ++) {
+        for (int  i = 0; i < vehicules.length; i++) {
             vehicules[i] = vehiculeReader.read();
         }
         Vehicule vehicule1 = vehiculeReader.read();
         Vehicule vehicule2 = vehiculeReader.read();
         Vehicule vehicule3 = vehiculeReader.read();
 
-        Vehicule[] vehicules = {vehicule1, vehicule2, vehicule3};
+        Vehicule[] vehicule = {vehicule1, vehicule2, vehicule3};
 
         return new Garage(
                 name,

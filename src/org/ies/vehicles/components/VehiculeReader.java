@@ -43,7 +43,6 @@ public class VehiculeReader {
 
         System.out.println("Matricula");
         String plate = scanner.nextLine();
-        scanner.nextLine();
 
         return new Vehicule(
                 vehiculeType,
